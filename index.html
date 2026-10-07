@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Moto</title>
+
+    <link rel="stylesheet" href="estilo.css">
+    
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#111111">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div>
+            <h1>🏍️ Mi Moto</h1>
+            <p>Control de gastos y mantenimiento</p>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- RESUMEN -->
+        <section class="seccion">
+            <h2>📊 Resumen</h2>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+                    <span>💰</span>
+                    <h3>Gastos</h3>
+                    <strong id="totalGastos">$0.00</strong>
+                </div>
+
+                <div class="tarjeta">
+                    <span>🔧</span>
+                    <h3>Mantenimientos</h3>
+                    <strong id="totalMantenimientos">0</strong>
+                </div>
+
+                <div class="tarjeta">
+                    <span>🏍️</span>
+                    <h3>Kilometraje</h3>
+                    <strong id="kilometrajeActual">0 km</strong>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- DATOS DE LA MOTO -->
+        <section class="seccion">
+            <h2>🏍️ Datos de mi moto</h2>
+
+            <div class="formulario">
+
+                <label>Marca</label>
+                <input type="text" id="marca" placeholder="Ej. Honda">
+
+                <label>Modelo</label>
+                <input type="text" id="modelo" placeholder="Ej. XR190L">
+
+                <label>Año</label>
+                <input type="number" id="anio" placeholder="Ej. 2022">
+
+                <label>Kilometraje actual</label>
+                <input type="number" id="kilometraje" placeholder="Ej. 12500">
+
+                <button onclick="guardarMoto()">
+                    💾 Guardar datos
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- AGREGAR GASTO -->
+        <section class="seccion">
+            <h2>💰 Registrar gasto</h2>
+
+            <div class="formulario">
+
+                <label>Descripción</label>
+                <input
+                    type="text"
+                    id="descripcionGasto"
+                    placeholder="Ej. Cambio de aceite"
+                >
+
+                <label>Monto</label>
+                <input
+                    type="number"
+                    id="montoGasto"
+                    placeholder="Ej. 12.50"
+                    step="0.01"
+                >
+
+                <label>Fecha</label>
+                <input type="date" id="fechaGasto">
+
+                <button onclick="agregarGasto()">
+                    ➕ Agregar gasto
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- AGREGAR MANTENIMIENTO -->
+        <section class="seccion">
+            <h2>🔧 Registrar mantenimiento</h2>
+
+            <div class="formulario">
+
+                <label>Tipo de mantenimiento</label>
+
+                <input
+                    type="text"
+                    id="tipoMantenimiento"
+                    placeholder="Ej. Cambio de aceite"
+                >
+
+                <label>Kilometraje</label>
+
+                <input
+                    type="number"
+                    id="kmMantenimiento"
+                    placeholder="Ej. 12500"
+                >
+
+                <label>Costo</label>
+
+                <input
+                    type="number"
+                    id="costoMantenimiento"
+                    placeholder="Ej. 12"
+                    step="0.01"
+                >
+
+                <label>Fecha</label>
+
+                <input
+                    type="date"
+                    id="fechaMantenimiento"
+                >
+
+                <button onclick="agregarMantenimiento()">
+                    🔧 Guardar mantenimiento
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- HISTORIAL DE GASTOS -->
+        <section class="seccion">
+
+            <h2>💰 Historial de gastos</h2>
+
+            <div id="listaGastos">
+                <p class="vacio">Todavía no hay gastos registrados.</p>
+            </div>
+
+        </section>
+
+
+        <!-- HISTORIAL DE MANTENIMIENTOS -->
+        <section class="seccion">
+
+            <h2>🔧 Historial de mantenimiento</h2>
+
+            <div id="listaMantenimientos">
+                <p class="vacio">
+                    Todavía no hay mantenimientos registrados.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>🏍️ Mi Moto — Control personal</p>
+    </footer>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
